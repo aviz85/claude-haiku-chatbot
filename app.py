@@ -1,15 +1,10 @@
 import streamlit as st
 import anthropic
-from dotenv import load_dotenv
-import os
 import time
 import re
 
-# Load environment variables
-load_dotenv()
-
 # Initialize Anthropic client
-client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])
 
 # Set page config
 st.set_page_config(page_title="Claude Chat", page_icon="🤖")
